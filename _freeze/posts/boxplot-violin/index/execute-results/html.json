@@ -1,0 +1,15 @@
+{
+  "hash": "b127584f0ad096545bba7fe7cdc2818e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Boxplot and violin plot\"\nauthor: \"Duc Nguyen\"\ndate: last-modified\nlightbox: true\nimage: p1.png\ncategories: [boxplot, violin]\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: package 'ggplot2' was built under R version 4.4.3\n```\n\n\n:::\n\n```{.r .cell-code}\npng(filename = \"p1.png\",\n    width = 6,\n    height = 6,\n    units = \"in\",\n    res = 300)\n\nggplot(data = PlantGrowth,\n       mapping = aes(x = group,\n                     y = weight,\n                     fill = group)) +\n  \ngeom_violin(width = 1,\n            alpha = 0.2) +\n  \ngeom_boxplot(width = 0.3, \n             color = \"black\",\n             alpha = 0.2)\n\ndev.off()\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\npng \n  2 \n```\n\n\n:::\n:::\n\n\n# Tham khảo\n\n* <https://www.statisticshowto.com/assumption-of-normality-test/>\n\n* <https://r-graph-gallery.com/violin_and_boxplot_ggplot2.html>\n\n* <https://datascience.stackexchange.com/questions/28053/boxplots-or-violinplots>\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

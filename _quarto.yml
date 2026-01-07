@@ -1,0 +1,38 @@
+project:
+  output-dir: docs/
+  type: website
+
+website:
+  title: "Vẽ đồ thị"
+  favicon: logor.png
+  navbar:
+    logo: logor.png    
+    right:
+      - text: "Tài liệu tham khảo"
+        href: https://tuhocr.github.io/tailieuthamkhao/
+      - text: "Phần mềm hữu ích"
+        href: https://tuhocr.github.io/phanmemhuuich/
+      - about.qmd
+      - icon: house-door-fill
+        href: https://www.tuhocr.com/
+      - icon: github
+        href: https://github.com/tuhocr/tailieuthamkhao
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      light: [comos, light.scss]
+      dark: [solar, dark.scss]
+      # - minty
+      # - dark.scss
+    highlight-style: 
+      light: "dracula.theme"
+      dark: "kate.theme"
+bibliography: "E:/GITHUB/tailieuthamkhao/thuvien.bib"
+
+ 
+
+
+
+

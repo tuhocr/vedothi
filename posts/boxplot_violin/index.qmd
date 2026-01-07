@@ -1,0 +1,90 @@
+---
+title: "Boxplot and violin plot"
+author: "Duc Nguyen"
+date: last-modified
+lightbox: true
+format:
+  html:
+    number-sections: false
+image: p2.png
+categories: [boxplot, violin]
+---
+
+```{r, echo=FALSE, results='hide'}
+knitr::opts_chunk$set(message = FALSE,  
+                      warning = FALSE,
+                      results = "hide")   
+```
+
+# Code 1
+
+```{r}
+library(ggplot2)
+
+png(filename = paste0(getwd(), "/p1.png"),
+    width = 4,
+    height = 4,
+    units = "in",
+    res = 300)
+
+ggplot(data = PlantGrowth,
+       mapping = aes(x = group,
+                     y = weight,
+                     fill = group)) +
+  
+geom_violin(width = 1,
+            alpha = 0.2) +
+  
+geom_boxplot(width = 0.3, 
+             color = "black",
+             alpha = 0.2,
+             show.legend = F)
+
+dev.off()
+```
+
+![](p1.png){width=70%}
+
+# Code 2
+
+```{r}
+library(ggplot2)
+
+png(filename = paste0(getwd(), "/p2.png"),
+    width = 4,
+    height = 4,
+    units = "in",
+    res = 300)
+
+ggplot(data = PlantGrowth,
+       mapping = aes(x = group,
+                     y = weight,
+                     fill = group,
+                     color = group)) +
+  
+geom_violin(width = 1,
+            alpha = 0.2) +
+  
+geom_boxplot(width = 0.3, 
+             color = "black",
+             alpha = 0.2,
+             outliers = F, # ẩn outlier
+             show.legend = F) +
+  
+geom_jitter(width = 0.1,
+            size = 3,
+            show.legend = F)
+
+dev.off()
+```
+
+![](p2.png){width=70%}
+
+# Tham khảo
+
+* <https://www.statisticshowto.com/assumption-of-normality-test/>
+
+* <https://r-graph-gallery.com/violin_and_boxplot_ggplot2.html>
+
+* <https://datascience.stackexchange.com/questions/28053/boxplots-or-violinplots>
+

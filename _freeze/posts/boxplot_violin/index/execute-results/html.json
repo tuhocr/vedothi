@@ -1,0 +1,15 @@
+{
+  "hash": "b8472987e7efdfc089599b1d02dcbcc4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Boxplot and violin plot\"\nauthor: \"Duc Nguyen\"\ndate: last-modified\nlightbox: true\nformat:\n  html:\n    number-sections: false\nimage: p2.png\ncategories: [boxplot, violin]\n---\n\n::: {.cell}\n\n:::\n\n\n# Code 1\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\npng(filename = paste0(getwd(), \"/p1.png\"),\n    width = 4,\n    height = 4,\n    units = \"in\",\n    res = 300)\n\nggplot(data = PlantGrowth,\n       mapping = aes(x = group,\n                     y = weight,\n                     fill = group)) +\n  \ngeom_violin(width = 1,\n            alpha = 0.2) +\n  \ngeom_boxplot(width = 0.3, \n             color = \"black\",\n             alpha = 0.2,\n             show.legend = F)\n\ndev.off()\n```\n:::\n\n\n![](p1.png){width=70%}\n\n# Code 2\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\n\npng(filename = paste0(getwd(), \"/p2.png\"),\n    width = 4,\n    height = 4,\n    units = \"in\",\n    res = 300)\n\nggplot(data = PlantGrowth,\n       mapping = aes(x = group,\n                     y = weight,\n                     fill = group,\n                     color = group)) +\n  \ngeom_violin(width = 1,\n            alpha = 0.2) +\n  \ngeom_boxplot(width = 0.3, \n             color = \"black\",\n             alpha = 0.2,\n             outliers = F, # ẩn outlier\n             show.legend = F) +\n  \ngeom_jitter(width = 0.1,\n            size = 3,\n            show.legend = F)\n\ndev.off()\n```\n:::\n\n\n![](p2.png){width=70%}\n\n# Tham khảo\n\n* <https://www.statisticshowto.com/assumption-of-normality-test/>\n\n* <https://r-graph-gallery.com/violin_and_boxplot_ggplot2.html>\n\n* <https://datascience.stackexchange.com/questions/28053/boxplots-or-violinplots>\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
