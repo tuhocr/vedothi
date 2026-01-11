@@ -1,0 +1,22 @@
+---
+title: "Chemical trace analysis"
+author: "Duc Nguyen"
+date: last-modified
+lightbox: true
+format:
+  html:
+    number-sections: false
+image: m1.png
+categories: [scatter plot, log scale, REQUEST]
+---
+
+```{r, echo=FALSE, results='hide'}
+knitr::opts_chunk$set(message = FALSE,  
+                      warning = FALSE,
+                      results = "hide")   
+```
+
+[@aung_2020]
+
+![](m1.png)
+

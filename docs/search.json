@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Vẽ đồ thị",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBoxplot and violin plot\n\n\n\nboxplot\n\n\nviolin\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nChemical trace analysis\n\n\n\nscatter plot\n\n\nlog scale\n\n\nREQUEST\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoxplot and violin plot\n\n\n\nboxplot\n\n\nviolin\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -26,5 +26,12 @@
     "title": "Boxplot and violin plot",
     "section": "",
     "text": "Code 1\n\nlibrary(ggplot2)\n\npng(filename = paste0(getwd(), \"/p1.png\"),\n    width = 4,\n    height = 4,\n    units = \"in\",\n    res = 300)\n\nggplot(data = PlantGrowth,\n       mapping = aes(x = group,\n                     y = weight,\n                     fill = group)) +\n  \ngeom_violin(width = 1,\n            alpha = 0.2) +\n  \ngeom_boxplot(width = 0.3, \n             color = \"black\",\n             alpha = 0.2,\n             show.legend = F)\n\ndev.off()\n\n\n\n\nCode 2\n\nlibrary(ggplot2)\n\npng(filename = paste0(getwd(), \"/p2.png\"),\n    width = 4,\n    height = 4,\n    units = \"in\",\n    res = 300)\n\nggplot(data = PlantGrowth,\n       mapping = aes(x = group,\n                     y = weight,\n                     fill = group,\n                     color = group)) +\n  \ngeom_violin(width = 1,\n            alpha = 0.2) +\n  \ngeom_boxplot(width = 0.3, \n             color = \"black\",\n             alpha = 0.2,\n             outliers = F, # ẩn outlier\n             show.legend = F) +\n  \ngeom_jitter(width = 0.1,\n            size = 3,\n            show.legend = F)\n\ndev.off()\n\n\n\n\nTham khảo\n\nhttps://www.statisticshowto.com/assumption-of-normality-test/\nhttps://r-graph-gallery.com/violin_and_boxplot_ggplot2.html\nhttps://datascience.stackexchange.com/questions/28053/boxplots-or-violinplots"
+  },
+  {
+    "objectID": "posts/chemical_trace_analysis/index.html",
+    "href": "posts/chemical_trace_analysis/index.html",
+    "title": "Chemical trace analysis",
+    "section": "",
+    "text": "(Aung et al. 2020)\n\n\n\n\n\nReferences\n\nAung, Max T., Yanyi Song, Kelly K. Ferguson, David E. Cantonwine, Lixia Zeng, Thomas F. McElrath, Subramaniam Pennathur, John D. Meeker, and Bhramar Mukherjee. 2020. “Application of an Analytical Framework for Multivariate Mediation Analysis of Environmental Data.” Nature Communications 11 (1). http://book.thuviencanhan.com/ref/factor_analysis/aung_2020.pdf."
   }
 ]

@@ -1,0 +1,15 @@
+{
+  "hash": "1560b5e79d6cff96d70f51c926ec65a3",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Chemical trace analysis\"\nauthor: \"Duc Nguyen\"\ndate: last-modified\nlightbox: true\nformat:\n  html:\n    number-sections: false\nimage: m1.png\ncategories: [scatter plot, log scale, REQUEST]\n---\n\n::: {.cell}\n\n:::\n\n\n[@aung_2020]\n\n![](m1.png)\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
