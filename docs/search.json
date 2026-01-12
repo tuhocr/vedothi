@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Vẽ đồ thị",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nChemical trace analysis\n\n\n\nscatter plot\n\n\nlog scale\n\n\nREQUEST\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoxplot and violin plot\n\n\n\nboxplot\n\n\nviolin\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCách tính t-test\n\n\n\nt-test\n\n\nREQUEST\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChemical trace analysis\n\n\n\nscatter plot\n\n\nlog scale\n\n\nREQUEST\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoxplot and violin plot\n\n\n\nboxplot\n\n\nviolin\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -33,5 +33,12 @@
     "title": "Chemical trace analysis",
     "section": "",
     "text": "(Aung et al. 2020)\n\n\n\n\n\nReferences\n\nAung, Max T., Yanyi Song, Kelly K. Ferguson, David E. Cantonwine, Lixia Zeng, Thomas F. McElrath, Subramaniam Pennathur, John D. Meeker, and Bhramar Mukherjee. 2020. “Application of an Analytical Framework for Multivariate Mediation Analysis of Environmental Data.” Nature Communications 11 (1). http://book.thuviencanhan.com/ref/factor_analysis/aung_2020.pdf."
+  },
+  {
+    "objectID": "posts/t_test/index.html",
+    "href": "posts/t_test/index.html",
+    "title": "Cách tính t-test",
+    "section": "",
+    "text": "(Hamid, Miskry, and Darweesh 2023)\n\n\n\n\n\n\nReferences\n\nHamid, Abdalla A. R. M., Abdullah Seif Abdullah Al Miskry, and Abdel Hameed M. Darweesh. 2023. “The Relationship Between Coping and Distress Among Faculty Members and Students During COVID-19 Pandemic Lockdown: The Moderating Effect of Gender.” http://book.thuviencanhan.com/ref/factor_analysis/hamid_2023.pdf."
   }
 ]

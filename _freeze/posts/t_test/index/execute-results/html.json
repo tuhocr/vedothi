@@ -1,0 +1,15 @@
+{
+  "hash": "8d830d017ab2d1824ae0e784069e6a48",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Cách tính t-test\"\nauthor: \"Duc Nguyen\"\ndate: last-modified\nlightbox: true\nformat:\n  html:\n    number-sections: false\nimage: k1.png\ncategories: [t-test, REQUEST]\n---\n\n::: {.cell}\n\n:::\n\n\n[@hamid_2023]\n\n![](k1.png)\n\n![](k2.png)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

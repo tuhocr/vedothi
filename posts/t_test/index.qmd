@@ -1,0 +1,23 @@
+---
+title: "Cách tính t-test"
+author: "Duc Nguyen"
+date: last-modified
+lightbox: true
+format:
+  html:
+    number-sections: false
+image: k1.png
+categories: [t-test, REQUEST]
+---
+
+```{r, echo=FALSE, results='hide'}
+knitr::opts_chunk$set(message = FALSE,  
+                      warning = FALSE,
+                      results = "hide")   
+```
+
+[@hamid_2023]
+
+![](k1.png)
+
+![](k2.png)
