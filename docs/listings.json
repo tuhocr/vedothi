@@ -2,9 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/boxplot_violin/index.html",
       "/posts/t_test/index.html",
-      "/posts/chemical_trace_analysis/index.html",
-      "/posts/boxplot_violin/index.html"
+      "/posts/chemical_trace_analysis/index.html"
     ]
   }
 ]
