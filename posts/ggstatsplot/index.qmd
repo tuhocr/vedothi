@@ -1,0 +1,109 @@
+---
+title: "`ggstatsplot`"
+author: "Duc Nguyen"
+date: last-modified
+lightbox: true
+format:
+  html:
+    number-sections: false
+image: g1.png
+categories: [ANOVA]
+---
+
+```{r, echo=FALSE, results='hide'}
+knitr::opts_chunk$set(message = FALSE,  
+                      warning = FALSE,
+                      results = "hide")   
+```
+
+```{r}
+library(ggstatsplot)
+library(ggplot2)
+library(grid)
+library(gridExtra)
+
+png(filename = paste0(getwd(), "/g1.png"),
+    width = 6,
+    height = 6,
+    units = "in",
+    res = 300)
+
+
+
+# options(scipen = 4)
+# options(digits = 4)
+# options(pillar.sigfig = 4)
+
+df <- PlantGrowth
+names(df) <- c("y_ok", "x_ok")
+
+p1 <- ggbetweenstats(data = df,
+                     x = x_ok,
+                     y = y_ok,
+                     type = "nonparametric", 
+                     plot.type = "box",
+                     pairwise.comparisons = T,
+                     pairwise.display = "significant",
+                     p.adjust.method = "bonferroni",
+                     centrality.plotting = F,
+                     centrality.path = FALSE,
+                     digits = 4L,
+                     ggtheme = theme_classic(base_size = 14),
+                     bf.message = F,
+                     results.subtitle = F,
+                     caption = "",
+                     ggsignif.args = list(size = 0.5,
+                                          textsize = 4),
+                     violin.args = list(width = 0, linewidth = 0, colour = NA),
+                     boxplot.args = list(width = 0),
+                     point.args = list(position = ggplot2::position_jitterdodge(dodge.width = 0.6),
+                                       alpha = 1,
+                                       size = 6,
+                                       stroke = 0, 
+                                       na.rm = TRUE),
+                     ) +
+  
+  theme(legend.position = "none") +
+  
+  geom_boxplot(median.color = "black",
+               color = NA,
+               fill = NA) +
+  
+  labs(color = "Note")
+
+b1 <- ggplot_build(p1)
+p_gtable <- ggplot_gtable(b1)
+
+p_gtable -> p_gtable_ori
+
+library(lemon)
+# lemon::gtable_show_names(p_gtable)
+
+p_gtable$grobs[[14]]$children[[1]]$label <- NULL
+
+p_gtable$grobs[[6]]$children[[4]] <- NULL
+
+p_gtable$grobs[[6]]$children[[3]]$pch <- c(rep(15,
+                                             times = 10),
+                                           rep(16,
+                                               times = 10),
+                                           rep(17,
+                                               times = 10)
+                                           )
+
+p_gtable$grobs[[6]]$children[[3]]$gp$col <- c(rep(adjustcolor(col = "red", alpha.f = 0.5),
+                                                  times = 10),
+                                              rep(adjustcolor(col = "blue", alpha.f = 0.5),
+                                                  times = 10),
+                                              rep(adjustcolor(col = "darkgreen", alpha.f = 0.5),
+                                                  times = 10)
+)
+
+grid::grid.newpage()
+grid::grid.draw(p_gtable)
+
+
+dev.off()
+```
+
+![](g1.png){width=70%}
