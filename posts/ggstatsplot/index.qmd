@@ -8,6 +8,8 @@ format:
     number-sections: false
 image: g1.png
 categories: [ANOVA]
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, echo=FALSE, results='hide'}
@@ -79,13 +81,13 @@ p_gtable <- ggplot_gtable(b1)
 p_gtable -> p_gtable_ori
 
 library(lemon)
-# lemon::gtable_show_names(p_gtable)
+lemon::gtable_show_names(p_gtable)
 
-p_gtable$grobs[[14]]$children[[1]]$label <- NULL
+p_gtable$grobs[[13]]$children[[1]]$label <- NULL
 
-p_gtable$grobs[[6]]$children[[4]] <- NULL
+p_gtable$grobs[[5]]$children[[4]] <- NULL
 
-p_gtable$grobs[[6]]$children[[3]]$pch <- c(rep(15,
+p_gtable$grobs[[5]]$children[[3]]$pch <- c(rep(15,
                                              times = 10),
                                            rep(16,
                                                times = 10),
@@ -93,7 +95,7 @@ p_gtable$grobs[[6]]$children[[3]]$pch <- c(rep(15,
                                                times = 10)
                                            )
 
-p_gtable$grobs[[6]]$children[[3]]$gp$col <- c(rep(adjustcolor(col = "red", alpha.f = 0.5),
+p_gtable$grobs[[5]]$children[[3]]$gp$col <- c(rep(adjustcolor(col = "red", alpha.f = 0.5),
                                                   times = 10),
                                               rep(adjustcolor(col = "blue", alpha.f = 0.5),
                                                   times = 10),
@@ -109,3 +111,8 @@ dev.off()
 ```
 
 ![](g1.png){width=70%}
+
+```{r}
+
+```
+
