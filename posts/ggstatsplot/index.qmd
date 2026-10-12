@@ -20,12 +20,24 @@ knitr::opts_chunk$set(message = FALSE,
 
 **Chỗ lệnh `p_gtable$grobs[[5]]`, thỉnh thoảng version cũ `ggplot2` sẽ chỉnh về `p_gtable$grobs[[6]]` hoặc ta sẽ dò thủ công lại vị trí của các grid object này.**
 
+**Download dataset [`df2`](https://filedn.com/lesyJpQOCafj7katNqunAxu/SHARE/df2.rds)**
+
 ```{r, results='hold'}
-df <- PlantGrowth
-names(df) <- c("y_ok", "x_ok")
+# df <- PlantGrowth
+# names(df) <- c("y_ok", "x_ok")
+# 
+# library(dplyr)
+# df |> dplyr:::arrange(x_ok) -> df
+# 
+# df
+
+df <- readRDS(paste0(getwd(), "/df2.rds"))
+
+df <- df[ , -5]
+
 
 library(dplyr)
-df |> dplyr:::arrange(x_ok) -> df
+df |> dplyr:::arrange(STUDY_ARM) -> df
 
 df
 ```
@@ -38,8 +50,8 @@ library(grid)
 library(gridExtra)
 
 png(filename = paste0(getwd(), "/g1.png"),
-    width = 6,
-    height = 6,
+    width = 8,
+    height = 8,
     units = "in",
     res = 300)
 
@@ -50,9 +62,17 @@ png(filename = paste0(getwd(), "/g1.png"),
 # options(pillar.sigfig = 4)
 
 
-p1 <- ggbetweenstats(data = df,
-                     x = x_ok,
-                     y = y_ok,
+p1 <- ggbetweenstats(
+  
+                     # data = df,
+                     # x = x_ok,
+                     # y = y_ok,
+                     
+                     data = df,
+                     x = STUDY_ARM,
+                     y = `FU_CD3+_T_CELL_FREQ_ok`,
+                     
+                     
                      type = "nonparametric", 
                      plot.type = "box",
                      pairwise.comparisons = T,
@@ -61,14 +81,14 @@ p1 <- ggbetweenstats(data = df,
                      centrality.plotting = F,
                      centrality.path = FALSE,
                      digits = 4L,
-                     ggtheme = theme_classic(base_size = 14),
+                     ggtheme = theme_classic(base_size = 20),
                      bf.message = F,
                      results.subtitle = F,
                      caption = "",
                      ggsignif.args = list(size = 0.5,
                                           vjust = 0,
                                           step_increase = 0.15,
-                                          textsize = 4),
+                                          textsize = 8),
                      violin.args = list(width = 0, linewidth = 0, colour = NA),
                      boxplot.args = list(width = 0),
                      point.args = list(position = ggplot2::position_jitterdodge(dodge.width = 0.6),
@@ -84,7 +104,10 @@ p1 <- ggbetweenstats(data = df,
                color = NA,
                fill = NA) +
   
-  labs(color = "Note")
+  labs(color = "Note") +
+  
+  coord_cartesian(ylim = c(0, 70),
+                  clip = "off")
 
 b1 <- ggplot_build(p1)
 p_gtable <- ggplot_gtable(b1)
@@ -98,18 +121,20 @@ p_gtable$grobs[[13]]$children[[1]]$label <- NULL
 
 p_gtable$grobs[[5]]$children[[4]] <- NULL
 
+# chinh so luong o day, check table(df$STUDYARM)
 p_gtable$grobs[[5]]$children[[3]]$pch <- c(rep(15,
-                                             times = 10),
+                                             times = 14),
                                            rep(16,
-                                               times = 10),
+                                               times = 4),
                                            rep(17,
                                                times = 10)
                                            )
 
+# chinh so luong o day, check table(df$STUDYARM)
 p_gtable$grobs[[5]]$children[[3]]$gp$col <- c(rep(adjustcolor(col = "red", alpha.f = 0.5),
-                                                  times = 10),
+                                                  times = 14),
                                               rep(adjustcolor(col = "blue", alpha.f = 0.5),
-                                                  times = 10),
+                                                  times = 4),
                                               rep(adjustcolor(col = "darkgreen", alpha.f = 0.5),
                                                   times = 10)
 )
