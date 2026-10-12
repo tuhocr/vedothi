@@ -23,14 +23,14 @@ format:
   html:
     toc: true
     number-sections: true
-    theme:
-      light: [comos, light.scss]
-      dark: [solar, dark.scss]
+    # theme:
+    #   light: [comos, light.scss]
+    #   dark: [solar, dark.scss]
       # - minty
       # - dark.scss
-    highlight-style: 
-      light: "dracula.theme"
-      dark: "kate.theme"
+    # highlight-style: 
+    #   light: "dracula.theme"
+    #   dark: "kate.theme"
 bibliography: "E:/GITHUB/tailieuthamkhao/thuvien.bib"
 
  

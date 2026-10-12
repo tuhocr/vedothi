@@ -8,8 +8,6 @@ format:
     number-sections: false
 image: g1.png
 categories: [ANOVA]
-editor_options: 
-  chunk_output_type: console
 ---
 
 ```{r, echo=FALSE, results='hide'}
@@ -17,6 +15,21 @@ knitr::opts_chunk$set(message = FALSE,
                       warning = FALSE,
                       results = "hide")   
 ```
+
+**Cần sắp xếp theo đúng thứ tự cột `x_ok` rồi mới vẽ đồ thị.**
+
+**Chỗ lệnh `p_gtable$grobs[[5]]`, thỉnh thoảng version cũ `ggplot2` sẽ chỉnh về `p_gtable$grobs[[6]]` hoặc ta sẽ dò thủ công lại vị trí của các grid object này.**
+
+```{r, results='hold'}
+df <- PlantGrowth
+names(df) <- c("y_ok", "x_ok")
+
+library(dplyr)
+df |> dplyr:::arrange(x_ok) -> df
+
+df
+```
+
 
 ```{r}
 library(ggstatsplot)
@@ -36,8 +49,6 @@ png(filename = paste0(getwd(), "/g1.png"),
 # options(digits = 4)
 # options(pillar.sigfig = 4)
 
-df <- PlantGrowth
-names(df) <- c("y_ok", "x_ok")
 
 p1 <- ggbetweenstats(data = df,
                      x = x_ok,
